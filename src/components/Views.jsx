@@ -16,7 +16,7 @@ const Views = () => {
     display="flex"
     justifyContent="center"
     alignItems="center"
-    h={currentHeight}
+    h="100dvh"
     >
     <Spinner size='xl' thickness='5px' color="#38B2AC" />
     </Box>
