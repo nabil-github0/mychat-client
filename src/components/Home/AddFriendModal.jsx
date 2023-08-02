@@ -1,7 +1,7 @@
 import { Button, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader } from "@chakra-ui/react"
 import TextField from "../TextField"
 import { Formik,Form } from "formik"
-import * as Yup from "yup"
+import * as Yup from "yup";
 import { useCallback, useContext, useState } from "react"
 import { FriendContext, SocketContext } from "./Home"
 
