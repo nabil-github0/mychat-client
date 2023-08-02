@@ -64,9 +64,7 @@ const Login = () => {
     >
       <VStack
       w="100%"
-      style={{
-        height:"100dvh"
-      }}
+      h="100vh"
       >
       <VStack
         as={Form}
