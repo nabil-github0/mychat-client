@@ -14,16 +14,18 @@ import { Tab, TabList } from "@chakra-ui/tabs";
 import { useContext } from "react";
 import AddFriendModal from "./AddFriendModal";
 import { FriendContext } from "./Home";
+import useWindowHeight from "../useWindowHeight";
 
 const SideBar = () => {
   const { friendList } = useContext(FriendContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const currentHeight = useWindowHeight()
 
   return (
     <VStack 
     py="1.4rem"
-    maxH="100vh"
-    minH="100vh"
+    maxH={currentHeight}
+    minH={currentHeight}
     >
       <VStack justify="space-evenly" w="100%">
         <Heading size="md">Add Friend</Heading>

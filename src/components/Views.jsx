@@ -6,17 +6,17 @@ import Home from "./Home/Home";
 import Login from "./Login/Login";
 import Signup from "./Login/Signup";
 import PrivateRoutes from "./PrivateRoutes";
+import useWindowHeight from "./useWindowHeight";
 
 const Views = () => {
   const { user } = useContext(AccountContext);
+  const currentHeight = useWindowHeight()
   return user.loggedIn === null ? (
     <Box
     display="flex"
     justifyContent="center"
     alignItems="center"
-    style={{
-      height:"100dvh"
-    }}
+    h={currentHeight}
     >
     <Spinner size='xl' thickness='5px' color="#38B2AC" />
     </Box>

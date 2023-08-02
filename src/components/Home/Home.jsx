@@ -5,6 +5,7 @@ import { AccountContext } from "../AccountContext";
 import Chat from "./Chat";
 import SideBar from "./SideBar";
 import useSocketSetup from "./useSocketSetup";
+import useWindowHeight from "../useWindowHeight";
 
 export const FriendContext = createContext();
 export const MessagesContext = createContext();
@@ -14,6 +15,7 @@ const Home = () => {
   const [friendList, setFriendList] = useState([]);
   const [messages, setMessages] = useState([]);
   const [friendIndex, setFriendIndex] = useState(0);
+  const currentHeight = useWindowHeight()
 
   const { user } = useContext(AccountContext);
   const [socket, setSocket] = useState(() => socketConn(user));
@@ -26,7 +28,7 @@ const Home = () => {
       <SocketContext.Provider value={{ socket }}>
         <Grid
           templateColumns="repeat(10, 1fr)"
-          h="100vh"
+          h={currentHeight}
           as={Tabs}
           onChange={index => setFriendIndex(index)}
         >
@@ -35,7 +37,7 @@ const Home = () => {
           </GridItem>
           <GridItem 
           colSpan="7"
-          maxH="100vh"
+          maxH={currentHeight}
           >
             <MessagesContext.Provider value={{ messages, setMessages }}>
               <Chat userid={friendList[friendIndex]?.userid} />

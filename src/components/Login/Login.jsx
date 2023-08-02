@@ -12,11 +12,13 @@ import { useNavigate } from "react-router";
 import { AccountContext } from "../AccountContext";
 import TextField from "../TextField";
 import Footer from "./Footer";
+import useWindowHeight from "../useWindowHeight";
 
 const Login = () => {
   const { setUser } = useContext(AccountContext);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const currentHeight = useWindowHeight()
   return (
     <Formik
       initialValues={{ username: "", password: "" }}
@@ -64,7 +66,7 @@ const Login = () => {
     >
       <VStack
       w="100%"
-      h="100vh"
+      h={currentHeight}
       >
       <VStack
         as={Form}
