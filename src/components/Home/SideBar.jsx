@@ -24,8 +24,8 @@ const SideBar = () => {
   return (
     <VStack 
     py="1.4rem"
-    maxH="100dvh"
-    minH="100dvh"
+    maxH={currentHeight}
+    minH={currentHeight}
     >
       <VStack justify="space-evenly" w="100%">
         <Heading size="md">Add Friend</Heading>
