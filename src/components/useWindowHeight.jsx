@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const useWindowHeight = () => {
-    const getWindowHeight = () => `${window.VisualViewport.height}px`;
+    const getWindowHeight = () => `${window.innerHeight}px`;
     const [currentHeight, setCurrentHeight] = useState(getWindowHeight());
 
     const resizeWindow = () => setCurrentHeight(getWindowHeight());
