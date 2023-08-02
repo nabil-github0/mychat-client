@@ -24,8 +24,8 @@ const SideBar = () => {
   return (
     <VStack 
     py="1.4rem"
-    maxH={currentHeight}
-    minH={currentHeight}
+    maxH="100dvh"
+    minH="100dvh"
     >
       <VStack justify="space-evenly" w="100%">
         <Heading size="md">Add Friend</Heading>
@@ -39,7 +39,7 @@ const SideBar = () => {
         {friendList.map(friend => (
           <HStack as={Tab} key={`friend:${friend}`}>
             <Circle
-              bg={friend.connected === "true" ? "green.700" : "red.500"}
+              bg={"" + friend.connected === "true" ? "green.500" : "red.500"}
               w="15px"
               h="15px"
             />
