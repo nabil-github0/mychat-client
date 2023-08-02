@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import socketConn from "../../socket";
 import { AccountContext } from "../AccountContext";
 import Chat from "./Chat";
-import Sidebar from "./Sidebar";
+import SideBar from "./SideBar";
 import useSocketSetup from "./useSocketSetup";
 
 export const FriendContext = createContext();
@@ -33,7 +33,7 @@ const Home = () => {
           onChange={index => setFriendIndex(index)}
         >
           <GridItem colSpan="3" borderRight="1px solid gray">
-            <Sidebar />
+            <SideBar />
           </GridItem>
           <GridItem 
           colSpan="7"

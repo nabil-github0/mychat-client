@@ -15,7 +15,7 @@ import { useContext } from "react";
 import AddFriendModal from "./AddFriendModal";
 import { FriendContext } from "./Home";
 
-const Sidebar = () => {
+const SideBar = () => {
   const { friendList } = useContext(FriendContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -52,4 +52,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;
