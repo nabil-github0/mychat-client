@@ -28,7 +28,7 @@ const Home = () => {
       <SocketContext.Provider value={{ socket }}>
         <Grid
           templateColumns="repeat(10, 1fr)"
-          h={currentHeight}
+          h="100dvh"
           as={Tabs}
           onChange={index => setFriendIndex(index)}
         >
@@ -37,7 +37,7 @@ const Home = () => {
           </GridItem>
           <GridItem 
           colSpan="7"
-          maxH={currentHeight}
+          maxH="100dvh"
           >
             <MessagesContext.Provider value={{ messages, setMessages }}>
               <Chat userid={friendList[friendIndex]?.userid} />
