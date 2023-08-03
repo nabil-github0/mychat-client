@@ -24,7 +24,7 @@ const AddFriendModal = ({isOpen,onClose}) => {
             <ModalCloseButton />
             <Formik 
             initialValues={{friendname:""}}
-            onSubmit={(values) => {
+            onSubmit={(values,actions) => {
                 socket.emit("add_friend",values.friendname, ({errorMsg,done, newFriend}) => {
                     if(done) {
                         setFriendList(prevFrnds => [newFriend, ...prevFrnds])
@@ -33,6 +33,7 @@ const AddFriendModal = ({isOpen,onClose}) => {
                     }
                     setError(errorMsg)
                 })
+                actions.resetForm()
             }}
             validationSchema={ Yup.object({
                 friendname:Yup.string()
