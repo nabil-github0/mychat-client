@@ -4,6 +4,7 @@ import { useContext, useEffect, useRef } from "react";
 import ChatBox from "./ChatBox";
 import { FriendContext, MessagesContext } from "./Home";
 import Linkify from "linkify-react";
+import useWindowHeight from "../useWindowHeight";
 
 const Chat = ({ userid }) => {
 
@@ -12,6 +13,8 @@ const Chat = ({ userid }) => {
   const { messages } = useContext(MessagesContext);
   
   const bottomDiv = useRef(null);
+
+  const currentHeight = useWindowHeight()
 
   useEffect(() => {
     bottomDiv.current?.scrollIntoView({
@@ -42,7 +45,7 @@ const Chat = ({ userid }) => {
                       : "1rem auto 0 0 !important"
                   }
                   maxW={{ base: "90%", lg: "50%" }}
-                  key={`msg:${friend.username}.${index}`}
+                  key={`msg:${message.time}.${index}`}
                   fontSize="lg"
                   bg={message.to === friend.userid ? "blue.100" : "gray.100"}
                   color="gray.800"
@@ -70,8 +73,9 @@ const Chat = ({ userid }) => {
     </VStack>
   ) : (
     <VStack
-      justify="center"
-      pt="5rem"
+      h={currentHeight}
+      display="flex"
+      justifyContent="center"
       w="100%"
       textAlign="center"
       fontSize="lg"

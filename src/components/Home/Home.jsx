@@ -12,17 +12,24 @@ export const MessagesContext = createContext();
 export const SocketContext = createContext();
 
 const Home = () => {
+
   const [friendList, setFriendList] = useState([]);
+
   const [messages, setMessages] = useState([]);
+
   const [friendIndex, setFriendIndex] = useState(0);
+
   const currentHeight = useWindowHeight()
 
   const { user } = useContext(AccountContext);
+
   const [socket, setSocket] = useState(() => socketConn(user));
   useEffect(() => {
     setSocket(() => socketConn(user));
   }, [user]);
+
   useSocketSetup(setFriendList, setMessages, socket);
+  
   return (
     <FriendContext.Provider value={{ friendList, setFriendList }}>
       <SocketContext.Provider value={{ socket }}>

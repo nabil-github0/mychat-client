@@ -2,7 +2,9 @@ import {useContext, useEffect} from "react";
 import { AccountContext } from "../AccountContext";
 
 const useSocketSetup = (setFriendList,setMessages, socket) => {
+
     const {setUser} = useContext(AccountContext);
+    
     useEffect(() => {
         socket.connect();
         socket.on("friends", friendList => {

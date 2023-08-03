@@ -38,12 +38,12 @@ const ChatBox = ({ userid }) => {
               as={Field}
               name="message"
               placeholder="Type message here..."
-              size="lg"
+              size={{base:"md",lg:"lg"}}
               autoComplete="off"
             />
             <Icon
               as={IoSend}
-              boxSize={12}
+              boxSize={{base:10,lg:12}}
               color="teal.400"
               style={{ cursor: "pointer" }}
               onClick={handleSubmit}

@@ -36,7 +36,7 @@ const SignUp = () => {
         onSubmit={(values, actions) => {
         const vals = { ...values };
         actions.resetForm();
-        fetch(`${import.meta.env.VITE_APP_SERVER_URL}/auth/signup`, {
+        fetch(`${import.meta.env.VITE_APP_SERVER_URL}/auth/register`, {
           method: "POST",
           credentials: "include",
           headers: {

@@ -17,8 +17,11 @@ import { FriendContext } from "./Home";
 import useWindowHeight from "../useWindowHeight";
 
 const SideBar = () => {
+
   const { friendList } = useContext(FriendContext);
+
   const { isOpen, onOpen, onClose } = useDisclosure();
+  
   const currentHeight = useWindowHeight()
 
   return (
