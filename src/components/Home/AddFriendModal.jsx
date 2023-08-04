@@ -2,7 +2,7 @@ import { Button, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, Moda
 import TextField from "../TextField"
 import { Formik,Form } from "formik"
 import * as Yup from "yup";
-import { useCallback, useContext, useState } from "react"
+import { useCallback, useContext, useState, useRef } from "react"
 import { FriendContext, SocketContext } from "./Home"
 
 const AddFriendModal = ({isOpen,onClose}) => {
@@ -15,7 +15,9 @@ const AddFriendModal = ({isOpen,onClose}) => {
 
     const {setFriendList} = useContext(FriendContext);
 
-    const {socket} = useContext(SocketContext)
+    const {socket} = useContext(SocketContext);
+
+    const inputRef = useRef(null);
     
   return (
     <Modal isOpen={isOpen} onClose={closeModal} isCentered>
@@ -24,7 +26,7 @@ const AddFriendModal = ({isOpen,onClose}) => {
             <ModalCloseButton />
             <Formik 
             initialValues={{friendname:""}}
-            onSubmit={(values,actions) => {
+            onSubmit={(values) => {
                 socket.emit("add_friend",values.friendname, ({errorMsg,done, newFriend}) => {
                     if(done) {
                         setFriendList(prevFrnds => [newFriend, ...prevFrnds])
@@ -33,7 +35,6 @@ const AddFriendModal = ({isOpen,onClose}) => {
                     }
                     setError(errorMsg)
                 })
-                actions.resetForm()
             }}
             validationSchema={ Yup.object({
                 friendname:Yup.string()
