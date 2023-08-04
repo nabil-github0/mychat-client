@@ -9,7 +9,7 @@ import { Box, CircularProgress } from "@chakra-ui/react";
 
 const Chat = ({ userid }) => {
 
-  const { friendList } = useContext(FriendContext);
+  const { friendList, friendListLoading } = useContext(FriendContext);
 
   const { messages, messagesLoading } = useContext(MessagesContext);
   
@@ -23,7 +23,7 @@ const Chat = ({ userid }) => {
     });
   }, [messages, userid]);
 
-  return messagesLoading ? (
+  return messagesLoading || friendListLoading ? (
         <Box
         h={currentHeight}
         display="flex"
