@@ -55,7 +55,7 @@ const ChatBox = ({ userid }) => {
           boxSize={{ base: 10, lg: 12 }}
           color="teal.400"
           cursor="pointer" 
-          onClick={handleSendMessage}
+          onClick={(event) => handleSendMessage(event)}
         />
       </HStack>
     </Stack>
