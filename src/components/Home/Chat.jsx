@@ -23,7 +23,7 @@ const Chat = ({ userid }) => {
     });
   }, [messages, userid]);
 
-  return messagesLoading || friendListLoading ? (
+  return messagesLoading ? (
         <Box
         h={currentHeight}
         display="flex"
