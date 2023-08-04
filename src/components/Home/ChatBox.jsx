@@ -14,7 +14,9 @@ const ChatBox = ({ userid }) => {
   const inputRef = useRef(null);
 
   const handleSendMessage = () => {
-    if (inputValue.trim() === "") return;
+    inputRef.current.focus(); 
+
+    if (inputValue.trim() === "" || inputValue.trim().length > 255) return;
 
     const message = {
       to: userid,
@@ -25,7 +27,6 @@ const ChatBox = ({ userid }) => {
     socket.emit("dm", message);
     setMessages((prevMsgs) => [message, ...prevMsgs]);
     setInputValue(""); 
-    inputRef.current.focus(); 
   };
 
   return (
