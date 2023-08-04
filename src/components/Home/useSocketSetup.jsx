@@ -1,17 +1,19 @@
 import {useContext, useEffect} from "react";
 import { AccountContext } from "../AccountContext";
 
-const useSocketSetup = (setFriendList,setMessages, socket) => {
+const useSocketSetup = (setFriendList,setMessages, setFriendListLoading, setMessagesLoading, socket) => {
 
     const {setUser} = useContext(AccountContext);
     
     useEffect(() => {
         socket.connect();
         socket.on("friends", friendList => {
-            setFriendList(friendList)
+            setFriendList(friendList);
+            setFriendListLoading(false);
         })
         socket.on("messages", messages => {
-            setMessages(messages)
+            setMessages(messages);
+            setMessagesLoading(false);
         })
         socket.on("dm",message => {
             setMessages(prevMsgs => [message,...prevMsgs])

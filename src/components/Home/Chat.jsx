@@ -5,12 +5,13 @@ import ChatBox from "./ChatBox";
 import { FriendContext, MessagesContext } from "./Home";
 import Linkify from "linkify-react";
 import useWindowHeight from "../useWindowHeight";
+import { Box, CircularProgress } from "@chakra-ui/react";
 
 const Chat = ({ userid }) => {
 
   const { friendList } = useContext(FriendContext);
 
-  const { messages } = useContext(MessagesContext);
+  const { messages, messagesLoading } = useContext(MessagesContext);
   
   const bottomDiv = useRef(null);
 
@@ -22,7 +23,16 @@ const Chat = ({ userid }) => {
     });
   }, [messages, userid]);
 
-  return friendList.length > 0 ? (
+  return messagesLoading ? (
+        <Box
+        h={currentHeight}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        >       
+          <CircularProgress isIndeterminate color='purple.500' />
+        </Box>
+  ) : (friendList.length > 0 ? (
     <VStack h="100%" justify="end">
       <TabPanels overflowY="scroll">
         {friendList.map((friend, index) => (
@@ -86,7 +96,8 @@ const Chat = ({ userid }) => {
         </TabPanel>
       </TabPanels>
     </VStack>
-  );
+    )
+  )
 };
 
 export default Chat;

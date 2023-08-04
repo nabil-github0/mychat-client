@@ -15,14 +15,15 @@ import { useContext } from "react";
 import AddFriendModal from "./AddFriendModal";
 import { FriendContext } from "./Home";
 import useWindowHeight from "../useWindowHeight";
+import { CircularProgress, Box } from "@chakra-ui/react";
 
 const SideBar = () => {
 
-  const { friendList } = useContext(FriendContext);
+  const { friendList, friendListLoading } = useContext(FriendContext);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   
-  const currentHeight = useWindowHeight()
+  const currentHeight = useWindowHeight();
 
   return (
     <VStack 
@@ -38,7 +39,17 @@ const SideBar = () => {
         </Button>
       </VStack>
       <Divider />
-      <VStack as={TabList} w="100%" overflowY="scroll" overflowX="hidden">
+      {friendListLoading ? ( 
+        <Box
+        h={currentHeight}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        >       
+        <CircularProgress isIndeterminate color='purple.500' />
+        </Box>
+      ) : (
+        <VStack as={TabList} w="100%" overflowY="scroll" overflowX="hidden">
         {friendList.map((friend,index) => (
           <HStack 
           as={Tab} 
@@ -53,9 +64,11 @@ const SideBar = () => {
           </HStack>
         ))}
       </VStack>
-      <AddFriendModal isOpen={isOpen} onClose={onClose} />
+      )
+    }
+    <AddFriendModal isOpen={isOpen} onClose={onClose} />
     </VStack>
-  );
+  )
 };
 
 export default SideBar;

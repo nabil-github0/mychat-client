@@ -11,9 +11,13 @@ const ChatBox = ({ userid }) => {
   const { socket } = useContext(SocketContext);
 
   const [inputValue, setInputValue] = useState(""); 
+
   const inputRef = useRef(null);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = (event) => {
+
+    event.preventDefault();
+
     inputRef.current.focus(); 
 
     if (inputValue.trim() === "" || inputValue.trim().length > 255) return;
@@ -39,6 +43,12 @@ const ChatBox = ({ userid }) => {
           placeholder="Type message here..."
           size={{ base: "md", lg: "lg" }}
           autoComplete="off"
+          onKeyDown={(event) => {
+            if(event.key === "Enter") {
+              handleSendMessage(event)
+              }
+            }
+          }
         />
         <Icon
           as={IoSend}

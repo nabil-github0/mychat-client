@@ -8,14 +8,20 @@ import useSocketSetup from "./useSocketSetup";
 import useWindowHeight from "../useWindowHeight";
 
 export const FriendContext = createContext();
+
 export const MessagesContext = createContext();
+
 export const SocketContext = createContext();
 
 const Home = () => {
 
   const [friendList, setFriendList] = useState([]);
 
+  const [friendListLoading, setFriendListLoading ] = useState(true);
+
   const [messages, setMessages] = useState([]);
+
+  const [messagesLoading, setMessagesLoading ] = useState(true);
 
   const [friendIndex, setFriendIndex] = useState(0);
 
@@ -28,10 +34,10 @@ const Home = () => {
     setSocket(() => socketConn(user));
   }, [user]);
 
-  useSocketSetup(setFriendList, setMessages, socket);
+  useSocketSetup(setFriendList, setMessages, setFriendListLoading, setMessagesLoading, socket);
   
   return (
-    <FriendContext.Provider value={{ friendList, setFriendList }}>
+    <FriendContext.Provider value={{ friendList, setFriendList, friendListLoading }}>
       <SocketContext.Provider value={{ socket }}>
         <Grid
           templateColumns="repeat(10, 1fr)"
@@ -46,7 +52,7 @@ const Home = () => {
           colSpan="7"
           maxH={currentHeight}
           >
-            <MessagesContext.Provider value={{ messages, setMessages }}>
+            <MessagesContext.Provider value={{ messages, setMessages, messagesLoading }}>
               <Chat userid={friendList[friendIndex]?.userid} />
             </MessagesContext.Provider>
           </GridItem>
