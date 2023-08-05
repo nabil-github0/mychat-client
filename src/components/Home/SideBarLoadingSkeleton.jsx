@@ -2,8 +2,9 @@ import { VStack, HStack, Text, Circle, TabList, Tab } from "@chakra-ui/react";
 import "../Styles/LoadingSkeleton.css";
 
 const SideBarLoadingSkeleton = () => {
+
   const skeletonItems = Array.from({ length: 18 }, (_, i) => (
-    <HStack maxW="95%" as={Tab} key={i}>
+    <HStack maxW="95%" as={Tab} key={i} >
       <Circle w="15px" h="15px" className="loading-animation" />
       <Text 
         h = "14px"

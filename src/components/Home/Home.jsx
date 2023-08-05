@@ -25,7 +25,7 @@ const Home = () => {
 
   const [friendIndex, setFriendIndex] = useState(0);
 
-  const currentHeight = useWindowHeight()
+  const currentHeight = useWindowHeight();
 
   const { user } = useContext(AccountContext);
 

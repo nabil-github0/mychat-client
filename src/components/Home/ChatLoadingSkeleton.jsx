@@ -1,8 +1,9 @@
 import { Text, TabPanels, VStack, Stack, HStack, Icon, TabPanel, Input } from '@chakra-ui/react'
 import { IoSend } from "react-icons/io5";
-import "../Styles/LoadingSkeleton.css"
+import "../Styles/loadingSkeleton.css"
 
 const ChatLoadingSkeleton = () => {
+
   const skeletonData = [
     { height: "48px", w: { base: "82%", lg: "30%" }, m: "1rem auto 0 0 !important"},
     { height: "35px", w: { base: "86%", lg: "25%" }, m: "1rem auto 0 0 !important"},
@@ -17,17 +18,6 @@ const ChatLoadingSkeleton = () => {
     { height: "52px", w: { base: "80%", lg: "24%" }, m: "1rem auto 0 0 !important"},
     { height: "32px", w: { base: "88%", lg: "39%" }, m: "1rem auto 0 0 !important"},
   ];
-
-  const skeletonItems = skeletonData.map((data, i) => (
-    <Text
-      key={i}
-      borderRadius="5px"
-      h={data.height}
-      w={data.w}
-      className="loading-animation"
-      m={data.m}
-    />
-  ));
 
   const ChatBoxWhenLoding = () => {
     return (
@@ -52,13 +42,24 @@ const ChatLoadingSkeleton = () => {
   return (
     <VStack h="100%" justify="end">
       <TabPanels overflowY="scroll">
-        <VStack 
-        flexDir="column-reverse"
-        as={TabPanel}
-        w="100%"
-        >
-            {skeletonItems}
+          { skeletonData.map((data, i) => (
+          <VStack 
+          flexDir="column-reverse"
+          as={TabPanel}
+          w="100%"
+          key={`${data.height}.${i}`}
+          >
+          <Text
+            key={`${data.w}.${i}`}
+            borderRadius="5px"
+            h={data.height}
+            w={data.w}
+            className="loading-animation"
+            m={data.m}
+          />
         </VStack>
+          ))
+        }
       </TabPanels>
       <ChatBoxWhenLoding />
     </VStack>
