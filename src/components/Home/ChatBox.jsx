@@ -1,7 +1,5 @@
 import { Icon, HStack, Input, Stack } from "@chakra-ui/react";
-import { Formik, Form } from "formik";
 import { useContext, useRef, useState } from "react";
-import * as Yup from "yup";
 import { MessagesContext, SocketContext } from "./Home";
 import { MessageDate } from "./MessageDate";
 import { IoSend } from "react-icons/io5";

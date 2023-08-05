@@ -15,7 +15,7 @@ import { useContext } from "react";
 import AddFriendModal from "./AddFriendModal";
 import { FriendContext } from "./Home";
 import useWindowHeight from "../useWindowHeight";
-import { CircularProgress, Box } from "@chakra-ui/react";
+import SideBarLoadingSkeleton from "./SideBarLoadingSkeleton";
 
 const SideBar = () => {
 
@@ -40,14 +40,7 @@ const SideBar = () => {
       </VStack>
       <Divider />
       {friendListLoading ? ( 
-        <Box
-        h={currentHeight}
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        >       
-        <CircularProgress isIndeterminate color='purple.500' />
-        </Box>
+        <SideBarLoadingSkeleton />
       ) : (
         <VStack as={TabList} w="100%" overflowY="scroll" overflowX="hidden">
         {friendList.map((friend,index) => (
