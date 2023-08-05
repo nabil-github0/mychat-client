@@ -3,7 +3,7 @@ import "../Styles/LoadingSkeleton.css";
 
 const SideBarLoadingSkeleton = () => {
 
-  const skeletonItems = Array.from({ length: 18 }, (_, i) => (
+  const SideBarSkeletonItems = Array.from({ length: 18 }, (_, i) => (
     <HStack maxW="95%" as={Tab} key={i} >
       <Circle w="15px" h="15px" className="loading-animation" />
       <Text 
@@ -16,7 +16,7 @@ const SideBarLoadingSkeleton = () => {
 
   return (
     <VStack as={TabList} w="100%" overflowY="scroll" overflowX="hidden">
-      {skeletonItems}
+      {SideBarSkeletonItems}
     </VStack>
   );
 };

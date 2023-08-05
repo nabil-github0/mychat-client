@@ -19,6 +19,8 @@ const ChatLoadingSkeleton = () => {
     { height: "32px", w: { base: "88%", lg: "39%" }, m: "1rem auto 0 0 !important"},
   ];
 
+
+
   const ChatBoxWhenLoding = () => {
     return (
         <Stack w="100%">
@@ -39,16 +41,14 @@ const ChatLoadingSkeleton = () => {
     )
   }
 
-  return (
-    <VStack h="100%" justify="end">
-      <TabPanels overflowY="scroll">
-          { skeletonData.map((data, i) => (
-          <VStack 
+  const ChatSkeletonItems = Array.from({ length: 18 }, (_, i) => (
+    <VStack 
           flexDir="column-reverse"
-          as={TabPanel}
           w="100%"
-          key={`${data.height}.${i}`}
+          as={TabPanel}
+          key={i}
           >
+          { skeletonData.map((data, i) => (
           <Text
             key={`${data.w}.${i}`}
             borderRadius="5px"
@@ -57,10 +57,14 @@ const ChatLoadingSkeleton = () => {
             className="loading-animation"
             m={data.m}
           />
-        </VStack>
           ))
         }
-      </TabPanels>
+        </VStack>
+  ));
+
+  return (
+    <VStack h="100%" as={TabPanels} justify="end" overflowY="scroll">
+      {ChatSkeletonItems}
       <ChatBoxWhenLoding />
     </VStack>
   );
