@@ -6,6 +6,7 @@ import { IoSend } from "react-icons/io5";
 
 const ChatBox = ({ userid }) => {
   const { setMessages } = useContext(MessagesContext);
+  
   const { socket } = useContext(SocketContext);
 
   const [inputValue, setInputValue] = useState(""); 

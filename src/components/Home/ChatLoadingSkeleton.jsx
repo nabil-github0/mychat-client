@@ -5,7 +5,7 @@ import "../Styles/LoadingSkeleton.css"
 const ChatLoadingSkeleton = () => {
 
   const skeletonData = [
-    { height: "48px", w: { base: "82%", lg: "30%" }, m: "1rem auto 0 0 !important"},
+    { height: "38px", w: { base: "82%", lg: "30%" }, m: "1rem auto 0 0 !important"},
     { height: "35px", w: { base: "86%", lg: "25%" }, m: "1rem auto 0 0 !important"},
     { height: "40px", w: { base: "89%", lg: "45%" }, m: "1rem 0 0 auto !important"},
     { height: "55px", w: { base: "84%", lg: "50%" }, m: "1rem auto 0 0 !important"},
@@ -41,7 +41,7 @@ const ChatLoadingSkeleton = () => {
     )
   }
 
-  const ChatSkeletonItems = Array.from({ length: 18 }, (_, i) => (
+  const ChatSkeletonItems = Array.from({ length: 15 }, (_, i) => (
     <VStack 
           flexDir="column-reverse"
           w="100%"
