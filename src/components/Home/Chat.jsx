@@ -1,4 +1,4 @@
-import { Text, VStack } from "@chakra-ui/layout";
+import { Text, VStack, Box } from "@chakra-ui/layout";
 import { TabPanel, TabPanels } from "@chakra-ui/tabs";
 import { useContext, useEffect, useRef } from "react";
 import ChatBox from "./ChatBox";
@@ -6,6 +6,7 @@ import { FriendContext, MessagesContext } from "./Home";
 import Linkify from "linkify-react";
 import useWindowHeight from "../useWindowHeight";
 import ChatLoadingSkeleton from "./ChatLoadingSkeleton";
+import NavBar from "./NavBar";
 
 const Chat = ({ userid }) => {
 
@@ -26,7 +27,10 @@ const Chat = ({ userid }) => {
   return messagesLoading ? (
       <ChatLoadingSkeleton />
   ) : (friendList.length > 0 ? (
-    <VStack h="100%" justify="end">
+    <VStack justify="end" h="100%">
+        <Box  flex="1" w="100%">
+        <NavBar />
+      </Box>
       <TabPanels overflowY="scroll">
         {friendList.map((friend, index) => (
           <VStack

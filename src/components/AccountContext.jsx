@@ -5,6 +5,7 @@ export const AccountContext = createContext();
 
 const UserContext = ({children}) => {
     const [user,setUser] = useState({
+        username:"",
         loggedIn:null,
         token: localStorage.getItem("token")
     });

@@ -1,6 +1,7 @@
-import { Text, TabPanels, VStack, Stack, HStack, Icon, TabPanel, Input } from '@chakra-ui/react'
+import { Text, TabPanels, VStack, Stack, HStack, Icon, TabPanel, Input, Box } from '@chakra-ui/react'
 import { IoSend } from "react-icons/io5";
 import "../Styles/LoadingSkeleton.css"
+import NavBar from './NavBar';
 
 const ChatLoadingSkeleton = () => {
 
@@ -64,6 +65,9 @@ const ChatLoadingSkeleton = () => {
 
   return (
     <VStack h="100%" justify="end" >
+      <Box flex="1" w="100%">
+      <NavBar />
+      </Box>
         <TabPanels overflowY="scroll">
           {ChatSkeletonItems}
         </TabPanels>

@@ -4,6 +4,7 @@ import {
   Heading,
   Text,
   VStack,
+  Box
 } from "@chakra-ui/react";
 import * as Yup from "yup";
 import { Form, Formik } from "formik";
@@ -13,6 +14,7 @@ import { AccountContext } from "../AccountContext";
 import TextField from "../TextField";
 import Footer from "./Footer";
 import useWindowHeight from "../useWindowHeight";
+import ToggleColorMode from "../ToggleColor"
 
 const Login = () => {
   const { setUser } = useContext(AccountContext);
@@ -20,6 +22,15 @@ const Login = () => {
   const navigate = useNavigate();
   const currentHeight = useWindowHeight()
   return (
+    <>
+    <Box
+    pos="absolute"
+    top="0"
+    right="0"
+    m="1rem"
+    >
+      <ToggleColorMode />
+    </Box>
     <Formik
       initialValues={{ username: "", password: "" }}
       validationSchema={ Yup.object({
@@ -106,6 +117,7 @@ const Login = () => {
       <Footer />
       </VStack>
     </Formik>
+    </>
   );
 };
 
