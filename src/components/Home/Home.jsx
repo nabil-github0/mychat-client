@@ -41,6 +41,7 @@ const Home = () => {
       <SocketContext.Provider value={{ socket }}>
         <Grid
           templateColumns="repeat(10, 1fr)"
+          overflowY="hidden"
           h={currentHeight}
           as={Tabs}
           onChange={index => setFriendIndex(index)}
