@@ -63,9 +63,11 @@ const ChatLoadingSkeleton = () => {
   ));
 
   return (
-    <VStack h="100%" as={TabPanels} justify="end" overflowY="scroll">
-      {ChatSkeletonItems}
-      <ChatBoxWhenLoding />
+    <VStack h="100%" justify="end" >
+        <TabPanels overflowY="scroll">
+          {ChatSkeletonItems}
+        </TabPanels>
+        <ChatBoxWhenLoding />
     </VStack>
   );
 }
