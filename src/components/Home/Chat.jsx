@@ -27,7 +27,7 @@ const Chat = ({ userid }) => {
   return messagesLoading ? (
       <ChatLoadingSkeleton />
   ) : (friendList.length > 0 ? (
-    <VStack justify="end" h="100%">
+    <VStack justify="end" h={currentHeight}>
         <Box  flex="1" w="100%">
         <NavBar />
       </Box>
