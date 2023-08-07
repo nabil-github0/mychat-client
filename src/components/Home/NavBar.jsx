@@ -36,7 +36,6 @@ const NavBar = () => {
 
   return (
       <Box 
-        top="0"
         w="100%" 
         bg={useColorModeValue('gray.200', 'gray.700')} 
         px={4}
