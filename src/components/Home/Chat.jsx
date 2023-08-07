@@ -27,11 +27,11 @@ const Chat = ({ userid }) => {
   return messagesLoading ? (
       <ChatLoadingSkeleton />
   ) : (friendList.length > 0 ? (
-    <VStack justify="end" h="100%" overflowY="hidden">
+    <VStack  h="100%" overflowY="hidden">
         <Box position="sticky" top="0" z-index="999" w="100%">
         <NavBar />
       </Box>
-      <TabPanels overflowY="scroll">
+      <TabPanels justify="end" flex="1" overflowY="scroll">
         {friendList.map((friend, index) => (
           <VStack
             flexDir="column-reverse"
