@@ -28,12 +28,13 @@ const Chat = ({ userid }) => {
       <ChatLoadingSkeleton />
   ) : (friendList.length > 0 ? (
     <VStack 
-    h={currentHeight}
+      h="100%"
       >
         <Box w="100%">
         <NavBar />
       </Box>
-      <TabPanels flex="1" overflowY="scroll">
+      <Box flex="1">
+      <TabPanels overflowY="scroll">
         {friendList.map((friend, index) => (
           <VStack
             flexDir="column-reverse"
@@ -78,6 +79,7 @@ const Chat = ({ userid }) => {
           </VStack>
         ))}
       </TabPanels>
+        <Box/>
       <ChatBox userid={userid} />
     </VStack>
   ) : (
