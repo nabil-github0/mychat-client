@@ -79,7 +79,7 @@ const Chat = ({ userid }) => {
           </VStack>
         ))}
       </TabPanels>
-        <Box/>
+        </Box>
       <ChatBox userid={userid} />
     </VStack>
   ) : (
