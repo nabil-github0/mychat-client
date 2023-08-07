@@ -40,8 +40,7 @@ const SideBar = () => {
       </VStack>
       <Divider />
       {friendListLoading ? ( 
-        // <SideBarLoadingSkeleton />
-        <Text>Loading..</Text>
+        <SideBarLoadingSkeleton />
       ) : (
         <VStack as={TabList} w="100%" overflowY="scroll" overflowX="hidden">
         {friendList.map((friend,index) => (
