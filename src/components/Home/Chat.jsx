@@ -30,11 +30,10 @@ const Chat = ({ userid }) => {
     <VStack 
       h="100%"
       >
-        <Box w="100%">
+      <Box w="100%">
         <NavBar />
       </Box>
-      <Box flex="1">
-      <TabPanels overflowY="scroll">
+      <TabPanels flex="1" overflowY="scroll">
         {friendList.map((friend, index) => (
           <VStack
             flexDir="column-reverse"
@@ -79,7 +78,6 @@ const Chat = ({ userid }) => {
           </VStack>
         ))}
       </TabPanels>
-        </Box>
       <ChatBox userid={userid} />
     </VStack>
   ) : (
