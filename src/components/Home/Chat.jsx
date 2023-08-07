@@ -31,11 +31,12 @@ const Chat = ({ userid }) => {
         <Box position="sticky" top="0" z-index="999" w="100%">
         <NavBar />
       </Box>
-      <TabPanels justify="end" flex="1" overflowY="scroll">
+      <TabPanels flex="1" overflowY="scroll">
         {friendList.map((friend, index) => (
           <VStack
             flexDir="column-reverse"
             as={TabPanel}
+            justify="end"
             key={`chat:${friend.username}.${index}`}
             w="100%"
           >
