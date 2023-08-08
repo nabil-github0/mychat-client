@@ -83,13 +83,17 @@ const Chat = ({ userid }) => {
   ) : (
     <VStack
       h={currentHeight}
+    >
+      <Box w="100%">
+        <NavBar />
+      </Box>
+      <TabPanels
       display="flex"
       justifyContent="center"
       w="100%"
       textAlign="center"
       fontSize="lg"
-    >
-      <TabPanels>
+      >
         <TabPanel>
           <Text>No friend :( Click add friend to start chatting</Text>
         </TabPanel>
