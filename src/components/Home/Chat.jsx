@@ -91,7 +91,7 @@ const Chat = ({ userid }) => {
       h="100%"
       w="100%"
       display="flex"
-      justifyContent="center"
+      textAlign="center"
       alignItems="center"
       >
           <Text fontSize="lg" >No friend :( Click add friend to start chatting</Text>
