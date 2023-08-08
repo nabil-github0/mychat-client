@@ -87,17 +87,15 @@ const Chat = ({ userid }) => {
       <Box w="100%">
         <NavBar />
       </Box>
-      <TabPanels
+      <Box
+      h="100%"
+      w="100%"
       display="flex"
       justifyContent="center"
-      w="100%"
-      textAlign="center"
-      fontSize="lg"
+      alignItems="center"
       >
-        <TabPanel>
-          <Text>No friend :( Click add friend to start chatting</Text>
-        </TabPanel>
-      </TabPanels>
+          <Text fontSize="lg" >No friend :( Click add friend to start chatting</Text>
+      </Box>
     </VStack>
     )
   )
