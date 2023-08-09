@@ -43,7 +43,7 @@ const NavBar = () => {
         <Flex h={14} alignItems={'center'} justifyContent={'space-between'}>
           <Box h={10} w={10}><Img src="message.png"/></Box>
 
-          <Button onClick={https://chat-pheonix.vercel.app}>
+          <Button onClick={toggleColorMode}>
              {colorMode === 'light' ? <MoonIcon color="blue.700"/> : <SunIcon color="orange.500"/>}
           </Button>
 
