@@ -55,6 +55,7 @@ const NavBar = () => {
                   cursor={'pointer'}
                   >
                   <Avatar
+                    name="User"
                     b="1px solid grey"
                     size={'sm'}
                     src={`https://api.dicebear.com/6.x/pixel-art/svg?seed=${user.username}`}
