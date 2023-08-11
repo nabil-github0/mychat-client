@@ -55,7 +55,7 @@ const NavBar = () => {
                   cursor={'pointer'}
                   >
                   <Avatar
-                    name=`&{user.username}`
+                    name={`${user.username}`}
                     b="1px solid grey"
                     size={'sm'}
                     src={`https://api.dicebear.com/6.x/pixel-art/svg?seed=${user.username}`}
@@ -65,7 +65,7 @@ const NavBar = () => {
                   <br />
                   <Center>
                     <Avatar
-                      name=`&{user.username}`
+                      name={`${user.username}`}
                       size={'2xl'}
                       src={`https://api.dicebear.com/6.x/pixel-art/svg?seed=${user.username}`}
                     />
