@@ -33,7 +33,24 @@ const Chat = ({ userid }) => {
       <Box w="100%">
         <NavBar />
       </Box>
-      <TabPanels flex="1" overflowY="scroll">
+      <TabPanels
+        flex="1" 
+        overflowY="scroll"
+        css={{
+          '&::-webkit-scrollbar': {
+            width: '8px',
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: '#e4e4e4',
+            borderRadius: "100px"
+          },
+          '&::-webkit-scrollbar-thumb': {
+            borderRadius: "100px",
+            background: "#8070d4",
+            border: "6px solid rgba(0, 0, 0, 0.2)"
+          },
+        }}
+        >
         {friendList.map((friend, index) => (
           <VStack
             flexDir="column-reverse"
