@@ -38,7 +38,7 @@ const Chat = ({ userid }) => {
         overflowY="scroll"
         css={{
           '&::-webkit-scrollbar': {
-            width: '8px',
+            width: '6px',
           },
           '&::-webkit-scrollbar-track': {
             backgroundColor: '#e4e4e4',
@@ -46,8 +46,7 @@ const Chat = ({ userid }) => {
           },
           '&::-webkit-scrollbar-thumb': {
             borderRadius: "100px",
-            background: "#8070d4",
-            border: "6px solid rgba(0, 0, 0, 0.2)"
+            background: "teal",
           },
         }}
         >
