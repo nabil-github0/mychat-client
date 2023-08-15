@@ -49,7 +49,7 @@ const SideBar = () => {
           overflowX="hidden"
           css={{
           '&::-webkit-scrollbar': {
-            width: '6px',
+            width: '4px',
           },
           '&::-webkit-scrollbar-track': {
             backgroundColor: '#e4e4e4',
