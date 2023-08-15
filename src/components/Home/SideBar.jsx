@@ -42,7 +42,25 @@ const SideBar = () => {
       {friendListLoading ? ( 
         <SideBarLoadingSkeleton />
       ) : (
-        <VStack as={TabList} w="100%" overflowY="scroll" overflowX="hidden">
+        <VStack 
+          as={TabList} 
+          w="100%" 
+          overflowY="scroll" 
+          overflowX="hidden"
+          css={{
+          '&::-webkit-scrollbar': {
+            width: '6px',
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: '#e4e4e4',
+            borderRadius: "100px"
+          },
+          '&::-webkit-scrollbar-thumb': {
+            borderRadius: "100px",
+            background: "teal",
+          },
+        }}
+          >
         {friendList.map((friend,index) => (
           <HStack 
           as={Tab} 
