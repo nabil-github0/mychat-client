@@ -46,7 +46,7 @@ const Chat = ({ userid }) => {
           },
           '&::-webkit-scrollbar-thumb': {
             borderRadius: "100px",
-            background: "teal.400",
+            background: "#38B2AC",
           },
         }}
         >
