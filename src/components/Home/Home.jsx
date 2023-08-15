@@ -39,25 +39,29 @@ const Home = () => {
   return (
     <FriendContext.Provider value={{ friendList, setFriendList, friendListLoading }}>
       <SocketContext.Provider value={{ socket }}>
-        <Grid
-          templateColumns="repeat(10, 1fr)"
+        <Tabs
+          isLazy
+          onChange={index => setFriendIndex(index)}
           overflowY="hidden"
           h={currentHeight}
-          as={Tabs}
-          onChange={index => setFriendIndex(index)}
         >
-          <GridItem colSpan="3" borderRight="1px solid gray">
-            <SideBar />
-          </GridItem>
-          <GridItem 
-          colSpan="7"
-          maxH={currentHeight}
-          >
-            <MessagesContext.Provider value={{ messages, setMessages, messagesLoading }}>
-              <Chat userid={friendList[friendIndex]?.userid} />
-            </MessagesContext.Provider>
-          </GridItem>
-        </Grid>
+          <Grid 
+            templateColumns="repeat(10, 1fr)"
+            overflowY="hidden"
+            h={currentHeight}
+            >
+            <GridItem colSpan="3" borderRight="1px solid gray">
+              <SideBar />
+            </GridItem>
+            <GridItem colSpan="7" maxH={currentHeight}>
+              <MessagesContext.Provider
+                value={{ messages, setMessages, messagesLoading }}
+              >
+                <Chat userid={friendList[friendIndex]?.userid} />
+              </MessagesContext.Provider>
+            </GridItem>
+          </Grid>
+        </Tabs>
       </SocketContext.Provider>
     </FriendContext.Provider>
   );
