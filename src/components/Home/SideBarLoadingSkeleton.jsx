@@ -15,7 +15,25 @@ const SideBarLoadingSkeleton = () => {
   ));
 
   return (
-    <VStack as={TabList} w="100%" overflowY="scroll" overflowX="hidden">
+    <VStack 
+      as={TabList} 
+      w="100%" 
+      overflowY="scroll" 
+      overflowX="hidden"
+      css={{
+          '&::-webkit-scrollbar': {
+            width: '4px',
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: '#e4e4e4',
+            borderRadius: "100px"
+          },
+          '&::-webkit-scrollbar-thumb': {
+            borderRadius: "100px",
+            background: "#38B2AC",
+          },
+        }}
+      >
       {SideBarSkeletonItems}
     </VStack>
   );
