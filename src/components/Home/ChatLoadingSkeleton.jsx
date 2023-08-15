@@ -68,7 +68,22 @@ const ChatLoadingSkeleton = () => {
       <Box flex="1" w="100%">
       <NavBar />
       </Box>
-        <TabPanels overflowY="scroll">
+        <TabPanels 
+          overflowY="scroll"
+          css={{
+          '&::-webkit-scrollbar': {
+            width: '6px',
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: '#e4e4e4',
+            borderRadius: "100px"
+          },
+          '&::-webkit-scrollbar-thumb': {
+            borderRadius: "100px",
+            background: "#38B2AC",
+          },
+        }}
+          >
           {ChatSkeletonItems}
         </TabPanels>
         <ChatBoxWhenLoding />
