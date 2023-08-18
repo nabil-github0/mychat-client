@@ -1,6 +1,6 @@
 import { Button } from "@chakra-ui/button";
 import { useDisclosure } from "@chakra-ui/hooks";
-import { SmallAddIcon, Icon } from "@chakra-ui/icons";
+import { Icon } from "@chakra-ui/icons";
 import { FaUserAlt } from "react-icons/fa"
 import {
   Circle,
@@ -35,7 +35,6 @@ const SideBar = () => {
         <Heading size="md">Add Friend</Heading>
         <Button onClick={onOpen} >
           <Icon as={FaUserAlt}/>
-          <SmallAddIcon />
         </Button>
       </VStack>
       <Divider />
