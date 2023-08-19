@@ -34,7 +34,7 @@ const ChatBox = ({ userid }) => {
 
   return (
     <Stack w="100%">
-      <HStack pb="1.4rem" px="1.4rem">
+      <HStack pb="1rem" px="1.4rem">
         <Input
           ref={inputRef}
           value={inputValue}
