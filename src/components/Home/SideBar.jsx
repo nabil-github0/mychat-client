@@ -26,8 +26,7 @@ const SideBar = () => {
   const currentHeight = useWindowHeight();
 
   return (
-    <VStack 
-    py="1.4rem"
+    <VStack
     maxH={currentHeight}
     minH={currentHeight}
     >
