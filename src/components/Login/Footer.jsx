@@ -7,7 +7,7 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react'
-import { FaGithub, FaDiscord  } from 'react-icons/fa'
+import { FaGithub, FaDiscord, FaTwitter } from 'react-icons/fa'
 
 const SocialButton = ({children,label,href}) => {
   return (
@@ -52,6 +52,9 @@ const Footer = () => {
           </SocialButton>
           <SocialButton label={'Discord'} href={'https://discordapp.com/users/Ahmed#2516'}>
             <FaDiscord />
+          </SocialButton>
+          <SocialButton label={'Twitter'} href={'https://twitter.com/nabilahmed_2006'}>
+            <FaTwitter/>
           </SocialButton>
         </Stack>
       </Container>
