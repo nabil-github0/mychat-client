@@ -27,6 +27,7 @@ const SideBar = () => {
 
   return (
     <VStack
+    py="1rem"
     maxH={currentHeight}
     minH={currentHeight}
     >
