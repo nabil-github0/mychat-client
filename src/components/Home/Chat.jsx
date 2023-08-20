@@ -19,9 +19,7 @@ const Chat = ({ userid }) => {
   const currentHeight = useWindowHeight()
 
   useEffect(() => {
-    bottomDiv.current?.scrollIntoView({
-      behavior: "smooth"
-    });
+    bottomDiv.current?.scrollIntoView();
   }, [messages, userid]);
 
   return messagesLoading ? (
