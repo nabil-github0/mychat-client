@@ -5,7 +5,7 @@ import ChatBox from "./ChatBox";
 import { FriendContext, MessagesContext } from "./Home";
 import Linkify from "linkify-react";
 import useWindowHeight from "../useWindowHeight";
-import ChatLoadingSkeleton from "./ChatLoadingSkeleton";
+import ChatLoadingSkeleton from "../Skeletons/ChatLoadingSkeleton";
 import NavBar from "./NavBar";
 
 const Chat = ({ userid }) => {

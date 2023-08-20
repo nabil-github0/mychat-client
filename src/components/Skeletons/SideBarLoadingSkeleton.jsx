@@ -1,5 +1,5 @@
 import { VStack, HStack, Text, Circle, TabList, Tab } from "@chakra-ui/react";
-import "../Styles/LoadingSkeleton.css";
+import "./LoadingSkeleton.css";
 
 const SideBarLoadingSkeleton = () => {
 

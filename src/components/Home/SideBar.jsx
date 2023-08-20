@@ -15,7 +15,7 @@ import { useContext } from "react";
 import AddFriendModal from "./AddFriendModal";
 import { FriendContext } from "./Home";
 import useWindowHeight from "../useWindowHeight";
-import SideBarLoadingSkeleton from "./SideBarLoadingSkeleton";
+import SideBarLoadingSkeleton from "../Skeletons/SideBarLoadingSkeleton";
 
 const SideBar = () => {
 
