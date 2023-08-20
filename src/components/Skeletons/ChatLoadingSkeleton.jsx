@@ -1,7 +1,7 @@
 import { Text, TabPanels, VStack, Stack, HStack, Icon, TabPanel, Input, Box } from '@chakra-ui/react'
 import { IoSend } from "react-icons/io5";
 import "./LoadingSkeleton.css"
-import NavBar from '../Home/NavBarNavBar';
+import NavBar from '../Home/NavBar';
 
 const ChatLoadingSkeleton = () => {
 
