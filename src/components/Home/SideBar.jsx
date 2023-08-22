@@ -10,6 +10,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/layout";
+import { Avatar, AvatarBadge } from '@chakra-ui/react'
 import { Tab, TabList } from "@chakra-ui/tabs";
 import { useContext } from "react";
 import AddFriendModal from "./AddFriendModal";
@@ -65,11 +66,17 @@ const SideBar = () => {
           as={Tab} 
           key={`friend:${friend.userid}.${index}`}
           >
-            <Circle
+            {/* <Circle
               bg={"" + friend.connected === "true" ? "green.500" : "red.500"}
               w="15px"
               h="15px"
-            />
+            /> */}
+            <Avatar 
+            name={`${friend.username}`}
+            src={`https://api.dicebear.com/6.x/pixel-art/svg?seed=${friend.username}`}
+            >
+              <AvatarBadge boxSize='1.25em' bg={"" + friend.connected === "true" ? "green.500" : "red.500"} />
+            </Avatar>
             <Text>{friend.username}</Text>
           </HStack>
         ))}
