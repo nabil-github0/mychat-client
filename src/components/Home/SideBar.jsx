@@ -65,6 +65,7 @@ const SideBar = () => {
           <HStack 
           as={Tab} 
           key={`friend:${friend.userid}.${index}`}
+          spacing="1"
           >
             {/* <Circle
               bg={"" + friend.connected === "true" ? "green.500" : "red.500"}
@@ -76,7 +77,7 @@ const SideBar = () => {
             size="sm"
             src={`https://api.dicebear.com/6.x/pixel-art/svg?seed=${friend.username}`}
             >
-              <AvatarBadge boxSize='1.25em' bg={"" + friend.connected === "true" ? "green.500" : "red.500"} />
+              <AvatarBadge boxSize='1.2em' bg={"" + friend.connected === "true" ? "green.500" : "red.500"} />
             </Avatar>
             <Text>{friend.username}</Text>
           </HStack>
