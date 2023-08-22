@@ -67,11 +67,6 @@ const SideBar = () => {
           key={`friend:${friend.userid}.${index}`}
           spacing="1"
           >
-            {/* <Circle
-              bg={"" + friend.connected === "true" ? "green.500" : "red.500"}
-              w="15px"
-              h="15px"
-            /> */}
             <Avatar 
             name={`${friend.username}`}
             size="sm"
