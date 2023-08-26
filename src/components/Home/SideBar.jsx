@@ -10,7 +10,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/layout";
-import { Circle } from '@chakra-ui/react'
 import { Tab, TabList } from "@chakra-ui/tabs";
 import { useContext } from "react";
 import AddFriendModal from "./AddFriendModal";
